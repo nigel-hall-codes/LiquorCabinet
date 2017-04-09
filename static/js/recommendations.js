@@ -1,3 +1,4 @@
+
 $( document ).ready(function() {
     var idnum = 0;
 
@@ -20,7 +21,7 @@ $( document ).ready(function() {
                 $('#title'+ idnum).html(fields.name);
                  //
                 $('#content'+idnum).html(fields.directions);
-                $('#testcard'+idnum).attr("src", MEDIA_URL+fields.image.slice(2));
+                $('#testcard'+idnum).attr("src", "media_cdn/"+fields.image);
                 // idnum +=1
 
             })
@@ -28,3 +29,4 @@ $( document ).ready(function() {
     })
 
 });
+

@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home),
     url(r'^ajax/', include('cocktails.urls')),
-    url(r'recommendations', views.recommendations)
+    url(r'recommendations', views.recommendations, name="recommendations")
 
 
 ]
