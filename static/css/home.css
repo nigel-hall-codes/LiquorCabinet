@@ -110,7 +110,7 @@ p {
 }
 .jumbotron {
   color: white;
-  background: rgb(11, 48, 13); /* This is for ie8 and below */
-   background: rgba(11, 48, 13, 0.5);
+  background: rgb(14, 22, 4); /* This is for ie8 and below */
+   background: rgba(14, 22, 4, 0.5);
 }
 
