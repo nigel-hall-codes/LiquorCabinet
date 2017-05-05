@@ -56,17 +56,18 @@ def make_cond(name, value):
 
 def getcocktails(request):
     inventory = Inventory.objects.all()
-    cList = []
+    cList = set()
 
     cs = Cocktails.objects.all()
     for i in inventory:
-        # print i.prediction
-        if not cs.filter(ingredients__icontains=i.prediction):
+        print i.prediction
+        if cs.filter(ingredients__icontains=i.prediction) == []:
             continue
         else:
-            cList.append(cs.filter(ingredients__icontains=i.prediction))
+            for ctail in cs.filter(ingredients__icontains=i.prediction):
+		cList.add(ctail)
 
-    cs = list(chain(cs))
+    cs = list(chain(cList))
     for c in cs:
         print c.name
     data = serializers.serialize("json", cs)

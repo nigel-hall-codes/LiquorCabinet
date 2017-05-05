@@ -1,0 +1,33 @@
+nav {
+        position: fixed;
+        top: 0px;       
+        margin: 0;
+        width: 100%;
+        padding: 0;
+
+}
+
+.background-image {
+    
+    position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+
+    height: 100%;
+    background-size: 250%;
+    -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);    
+}
+.container {
+        height: 100%
+        position: fixed;
+width: 100%;
+z-index: 10;
+}
+

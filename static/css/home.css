@@ -1,0 +1,110 @@
+
+#fileinput {
+    display: none;
+}
+nav {
+	position: fixed;
+	top: 0px;	
+	margin: 0;
+	width: 100%;
+	padding: 0;
+
+}
+
+.card {
+    margin: 0 auto;
+}
+
+.background-image {
+    
+    position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+
+    height: 100%;
+    background-size: 250%;
+    -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);    
+}
+.container {
+	height: 100%
+        position: fixed;
+width: 100%;
+z-index: 10;
+}
+
+#currinvlabel {
+  color: yellow;
+   text-shadow: 0 2px black;
+  font-family: Pacifico;
+}
+
+p {
+  text-align: center;
+  font-size: 40px;
+  margin: 20px 0 20px 0;
+}
+
+#currinvlabel {
+  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+  animation: neon3 1.5s ease-in-out infinite alternate;
+}
+
+
+#gobuttondiv {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  z-index: 11;
+
+}
+
+#gobutton {
+  width:100%;
+}
+.loader {
+
+  border: 4px solid greenyellow;
+  border-radius: 50%;
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn-group {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+
+.btn-secondary {
+  width: 50%;
+  color: white;
+  backround-color: green;
+  border: 1px solid black;
+}
