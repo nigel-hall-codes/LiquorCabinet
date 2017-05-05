@@ -63,7 +63,7 @@ $(document).ready(function () {
 
         var reader = new FileReader();
         reader.onload = function (e) {
-	    html = '<div class="card card-inverse pb-5" style=“width: 20rem"><img class="card-img" src="' + e.target.result + '" alt="Card image" style="max-height:400px;  filter: brightness(50%);"><div class="card-img-overlay"> <h4 class="card-title" id="title'+idnum.toString()+'">Analyzing... </h4> <h2 class="card-title"id="content'+idnum+'" style="bottom: 0px;"> </h2></div> </div>'
+	    html = '<div class="card card-inverse pb-5" style="width: 20rem; max-height: 400px"><img class="card-img" src="' + e.target.result + '" alt="Card image" style="max-height:400px;  filter: brightness(50%);"><div class="card-img-overlay"> <h4 class="card-title" id="title'+idnum.toString()+'">Analyzing... </h4> <h2 class="card-title"id="content'+idnum+'" style="bottom: 0;"> </h2></div> </div>'
 
             $('#inventory').append(html);
             $.ajax({
