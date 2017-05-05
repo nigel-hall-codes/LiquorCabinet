@@ -4,6 +4,8 @@
 // var selectedFile = $('#fileinput').get(0).files[0];
 // console.log()
 //  Cookie Bullshit
+
+
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -37,10 +39,13 @@ $.ajaxSetup({
 
 
 //Adds a new element and posts to db
+
+
 var idnum = 1;
-$(function() {
+$(document).ready(function () {
     $('#fileinput').on('change', function () {
 	$('#botgobutton').html('<div class="loader mx-auto"></div>');
+    $('#howtojtron').remove();
         var s = '<li>text</li>'; // HTML string
 
         var div = document.createElement('div');
@@ -59,6 +64,7 @@ $(function() {
         var reader = new FileReader();
         reader.onload = function (e) {
 	    html = '<div class="card card-inverse" style=“width: 20rem"><img class="card-img" src="' + e.target.result + '" alt="Card image" style="max-height:400px;  filter: brightness(50%);"><div class="card-img-overlay"> <h4 class="card-title" id="title'+idnum.toString()+'">Analyzing... </h4> <h2 class="card-title"id="content'+idnum+'" style="bottom: 0px;"> </h2></div> </div>'
+
             $('#inventory').append(html);
             $.ajax({
                 type: 'POST',
