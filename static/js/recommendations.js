@@ -12,7 +12,7 @@ $( document ).ready(function() {
             console.log(cocktails);
             cocktails.forEach(function (co) {
                 idnum = co.pk;
-                html = '<div class="mx-auto p-2"><div class="card" style="width:20rem;"><img id="testcard'+idnum.toString()+'" style="max-height: 400px;" class="card-img-top"  alt="Card image cap"><div class="card-block"> <h4 class="card-title display-4" id="title'+idnum.toString()+'">Analyzing...</h4> <p class="card-text" id="content'+idnum+'">content.</p> </div> </div></div>'
+                html = '<div class="mx-auto p-2"><div class="card" style="width:20rem;"><img id="testcard'+idnum.toString()+'" style="max-height: 400px;" class="card-img-top"  alt="Card image cap"><div class="card-block"> <h4 class="card-title display-4" id="title'+idnum.toString()+'">Analyzing...</h4><p class="card-text" id="ingred'+idnum+'"></p><p class="card-text" id="content'+idnum+'">content.</p> </div> </div></div>'
                 fields = co.fields;
                 console.log(fields.image)
 
@@ -21,6 +21,7 @@ $( document ).ready(function() {
                 $('#title'+ idnum).html(fields.name);
                  //
                 $('#content'+idnum).html(fields.directions);
+                $('#ingred'+idnum).html(fields.ingredients);
                 $('#testcard'+idnum).attr("src", "media_cdn/"+fields.image);
                 // idnum +=1
 
