@@ -40,19 +40,19 @@ $.ajaxSetup({
 //Cookie Bullshit ends
 
 //Image Resizer
-function resizeInCanvas(img){
-  /////////  3-3 manipulate image
-    var perferedWidth = 2700;
-  var ratio = perferedWidth / img.width;
-  var canvas = $("<canvas>")[0];
-  canvas.width = img.width * ratio;
-  canvas.height = img.height * ratio;
-  var ctx = canvas.getContext("2d");
-  ctx.drawImage(img, 0,0,canvas.width, canvas.height);
-  //////////4. export as dataUrl
-  return canvas.toDataURL();
+function resizeBase64Img(base64, width, height) {
+    var canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+    var context = canvas.getContext("2d");
+    var deferred = $.Deferred();
+    $("<img/>").attr("src", "data:image/gif;base64," + base64).load(function() {
+        context.scale(width/this.width,  height/this.height);
+        context.drawImage(this, 0, 0);
+        deferred.resolve($("<img/>").attr("src", canvas.toDataURL()));
+    });
+    return deferred.promise();
 }
-
 
 //Adds a new element and posts to db
 
@@ -84,10 +84,10 @@ $(document).ready(function () {
 	    html = '<div class="card card-inverse pb-5" style="width: 20rem; height: auto; overflow: hidden;"><img class="card-img" src="' + e.target.result + '" alt="Card image" style="max-height:400px;  filter: brightness(50%);"><div class="card-img-overlay"> <h4 class="card-title" id="content'+idnum+'">Uploading... </h4> </div> </div>'
 
             $('#inventory').append(html);
-
+            file = resizeBase64Img(file,100,100);
             formdata = new FormData();
             formdata.append('image', file);
-            file = resizeInCanvas(file);
+
 
             $.ajax({
                 type: 'POST',
