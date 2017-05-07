@@ -69,7 +69,7 @@ $(document).ready(function () {
 
         var reader = new FileReader();
         reader.onload = function (e) {
-	    html = '<div class="card card-inverse" style="width: 20rem; height: auto; overflow: hidden;"><img class="card-img" src="' + e.target.result + '" alt="Card image" style="max-height:400px;  filter: brightness(50%);"><div class="card-img-overlay"> <h4 class="card-title" id="content'+idnum+'">Uploading... </h4> </div> </div>'
+	    html = '<div class="mx-auto p-2"><div class="card card-inverse" style="width: 20rem; height: auto; overflow: hidden;"><img class="card-img" src="' + e.target.result + '" alt="Card image" style="max-height:400px;  filter: brightness(50%);"><div class="card-img-overlay"> <h4 class="card-title" id="content'+idnum+'">Uploading... </h4> </div> </div></div>'
 
             $('#inventory').append(html);
 
