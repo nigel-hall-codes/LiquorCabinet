@@ -72,9 +72,10 @@ $(document).ready(function () {
         // get file and pull attributes
         var input = $(this)[0];
         var file = input.files[0];
-        file = resizeInCanvas(file);
-        formdata = new FormData();
-        formdata.append('image', file);
+
+
+
+
 
         // load file into preview pane
 
@@ -83,6 +84,11 @@ $(document).ready(function () {
 	    html = '<div class="card card-inverse pb-5" style="width: 20rem; height: auto; overflow: hidden;"><img class="card-img" src="' + e.target.result + '" alt="Card image" style="max-height:400px;  filter: brightness(50%);"><div class="card-img-overlay"> <h4 class="card-title" id="content'+idnum+'">Uploading... </h4> </div> </div>'
 
             $('#inventory').append(html);
+
+            formdata = new FormData();
+            formdata.append('image', file);
+            file = resizeInCanvas(file);
+
             $.ajax({
                 type: 'POST',
                 url: 'ajax/post/',
