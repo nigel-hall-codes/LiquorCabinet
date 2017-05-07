@@ -21,6 +21,8 @@ function getCookie(name) {
     }
     return cookieValue;
 }
+
+
 var csrftoken = getCookie('csrftoken');
 
 function csrfSafeMethod(method) {
@@ -36,6 +38,20 @@ $.ajaxSetup({
 });
 
 //Cookie Bullshit ends
+
+//Image Resizer
+function resizeInCanvas(img){
+  /////////  3-3 manipulate image
+    var perferedWidth = 2700;
+  var ratio = perferedWidth / img.width;
+  var canvas = $("<canvas>")[0];
+  canvas.width = img.width * ratio;
+  canvas.height = img.height * ratio;
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0,0,canvas.width, canvas.height);
+  //////////4. export as dataUrl
+  return canvas.toDataURL();
+}
 
 
 //Adds a new element and posts to db
@@ -56,6 +72,7 @@ $(document).ready(function () {
         // get file and pull attributes
         var input = $(this)[0];
         var file = input.files[0];
+        file = resizeInCanvas(file);
         formdata = new FormData();
         formdata.append('image', file);
 
