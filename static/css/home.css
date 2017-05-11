@@ -1,5 +1,6 @@
 #snapslogo {
-  size: 50%;
+  max-height: 300px;
+  max-width: 600px;
 }
 #fileinput {
     display: none;
