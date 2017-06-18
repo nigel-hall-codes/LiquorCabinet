@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     url(r'post', views.postimage),
     url(r'getcocktails', views.getcocktails),
+    url(r'^getUpcoming/', views.GetUpcoming.as_view())
 ]

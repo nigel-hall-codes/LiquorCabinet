@@ -79,3 +79,14 @@ $(function() {
 
     });
 })
+
+// $.ajax({
+//     method: 'POST',
+//     url: 'ajax/getUpcoming/',
+//     data: {'text':'this string 06/17/2017 \n jdjffhuehfeie 06/24/17\n nfjdjfbfjebfebfefb nfjfjeffejf\n'}
+//
+// }).then(function (response) {
+//
+//     console.log(response)
+//
+// })

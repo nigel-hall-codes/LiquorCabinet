@@ -9,6 +9,11 @@ from django.core import serializers
 from .models import Cocktails
 import convertIngredients
 from itertools import chain
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+import SyllDateFinder
+
 
 
 
@@ -75,3 +80,23 @@ def getcocktails(request):
         json.dumps(data),
         content_type='application/json')
 
+# API for syllabus
+
+
+class GetUpcoming(APIView):
+
+    # send data back as JSON
+
+    def get(self, request):
+        print "get called"
+        data = {"data": "theData"}
+        return Response(data)
+
+    # to access data:       request.data[key]
+
+    def post(self, request):
+        print "Post called"
+        txt = request.data['text']
+        txt = SyllDateFinder.stringSplitter(txt)
+        response = {"line": txt[0], 'lineNum': txt[1] }
+        return Response(response)
